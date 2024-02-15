@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   
+       <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZW83CFM4WJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZW83CFM4WJ');
+    </script>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+     <meta name="description" content="Red Team is a three star restaurant in Bangladesh. It has also a premium food delivery service with the mission of bringing affordable and healthy meals to as many people as possible.">
+     
+      <link rel="stylesheet" type="text/css" href="static/vendors/css/normalize.css">
+      
+      <link rel="stylesheet" type="text/css" href="static/vendors/css/grid.css">
+      <link rel="stylesheet" type="text/css" href="static/vendors/css/ionicons.min.css">
+      <link rel="stylesheet" type="text/css" href="static/vendors/css/animate.css">
+      
+       <link rel="stylesheet" type="text/css" href="static/css/style.css">
+       <link rel="stylesheet" type="text/css" href="static/css/queries.css">
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet" type="text/css">
+       <title>Red Team</title>
+       
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
+        
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/static/favicons/site.webmanifest">
+        
+        <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#f5c0c0">
+        
+        <link rel="shortcut icon" href="/static/favicons/favicon.ico">
+        
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="/static/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+       
+       
+   </head>
+    
+    <body>
+       <header class="user_input">
+          <nav>
+              <div class="row">
+                <img src="{{ url_for('static', filename='images/logo-white.png') }}" alt="Red Team logo" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Red Team logo" class="logo-black">
+                <ul class="main-nav js--main-nav"> 
+                <li></li>
+                <li><a href="/">Home</a></li>
+                <li></li>
+                </ul>
+                <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+              </div>
+          </nav>
+           
+       </header>
+
+
+       <section class="section-form">
+            
+            <div class="row">
+                <h2>Sign Up Today!</h2>
+            </div>
+            <div class="row">
+                <form method="post" action="/signup" class="signup-form">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="username">Username:</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                    </div>
+                    
+                    <!--
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="find-us">How did you find us</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            
+                            <select name="find-us" id="find-us">
+                            <option value="friends" selected>Friends</option>
+                            <option value="search">Search engine</option>
+                            <option value="ad">Advertisement</option>
+                            <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    -->
+                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <button class="btn btn-full js--scroll-to-plans" type="submit">Create Account</button> 
+                        </div>
+                    </div>
+                    
+                </form>
+                            </div>
+        </section>
+
+       <footer>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2024 by RedTeam. All rights reserved.
+                </p>
+            </div>
+        </footer>
+
+
+        
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script src="static/vendors/js/jquery.waypoints.min.js"></script>
+    <script src="static/js/script.js"></script>
+        
+    </body>
+    
+    </html>

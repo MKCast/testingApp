@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   
+       <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZW83CFM4WJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZW83CFM4WJ');
+    </script>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+     <meta name="description" content="Red Team is a three star restaurant in Bangladesh. It has also a premium food delivery service with the mission of bringing affordable and healthy meals to as many people as possible.">
+     
+      <link rel="stylesheet" type="text/css" href="static/vendors/css/normalize.css">
+      
+      <link rel="stylesheet" type="text/css" href="static/vendors/css/grid.css">
+      <link rel="stylesheet" type="text/css" href="static/vendors/css/ionicons.min.css">
+      <link rel="stylesheet" type="text/css" href="static/vendors/css/animate.css">
+      
+       <link rel="stylesheet" type="text/css" href="static/css/style.css">
+       <link rel="stylesheet" type="text/css" href="static/css/queries.css">
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet" type="text/css">
+       <title>Red Team</title>
+       
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
+        
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/static/favicons/site.webmanifest">
+        
+        <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#f5c0c0">
+        
+        <link rel="shortcut icon" href="/static/favicons/favicon.ico">
+        
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="/static/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+       
+       
+   </head>
+    
+    <body>
+       <header class="profile">
+          <nav>
+              <div class="section-features">
+                  <a href="/"><img src="static/images/logo-white.png" alt="Red Team logo" class="logo"></a>
+                  <img src="static/images/logo.png" alt="Red Team logo" class="logo-black">
+                  <ul class="main-nav js--main-nav"> 
+                    {% if session['user_id'] %}
+                    <li><a href="/orders">My Orders</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                    <li></li>
+                    {% else %}
+                    <li><a href="/login">Log In</a></li>
+                    <li><a href="/signup">Sign Up</a></li>
+                    {% endif %}
+
+                
+                  </ul>
+                  <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+              </div>
+          </nav>
+          <input type="hidden" id="user-id" value="{{ user_name }}">
+       </header>
+          
+          <section class="section-features js--section-features" id="features">
+
+            <form action="/submit_order" method="post">
+                
+              <div class="row">
+
+                <h2>Checkout</h2>
+              </div>
+
+              
+            <div class="row centered-row">
+                {% if cart %}
+                    <ul>
+                    {% for item in cart %}
+                        <li>{{ item.itemId }} - ${{ item.price }} x {{ item.quantity }}</li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>Your cart is empty.</p>
+                {% endif %}
+            </div>
+            
+
+              <div class="row">
+
+                <h2>Order Total: ${{ total_cost }}</h2>
+              </div>
+
+              
+            <div class="row centered-row">
+                <form action="/submit_order" method="post">
+                    <input type="hidden" name="total_cost" value="{{ total_cost }}">
+                    <button type="submit" class="btn btn-primary">Submit Order</button>
+                </form>
+            </div>
+            
+              
+          </section>
+          
+          <section class="section-meals">
+            
+            <li>
+                <div id="cartItems"></div>
+            </li> 
+              
+            
+              <!---
+              <ul class="meals-showcase clearfix">
+                  <li>
+                      <figure class="meal-photo">
+                          <img src="static/images/Mixed%20Grill%20Platter.jpg"  alt="Mixed Grill Platter" >
+                      </figure>
+                  </li>
+                  <li>
+                      <figure class="meal-photo">
+                          <img src="static/images/Grilled%20Lobster.jpg"  alt="Grilled Lobster" >
+                      </figure>
+                  </li>
+                  <li>
+                      <figure class="meal-photo">
+                          <img src="static/images/Beef%20Sirloin%20Steak.jpg"  alt="Beef Sirloin Steak" >
+                      </figure>
+                  </li>
+                  <li>
+                      <figure class="meal-photo">
+                          <img src="static/images/Fish%20FIllet%20Steak.jpg"  alt="Fish FIllet Steak" >
+                      </figure>
+                  </li>
+              </ul>
+              -->
+
+          </section>
+          
+       
+        <footer>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2024 by RedTeam. All rights reserved.
+                </p>
+            </div>
+        </footer>
+        
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="static/vendors/js/jquery.waypoints.min.js"></script>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script src="static/js/script.js"></script>
+    
+    
+    <!--
+    <script>
+        window.onload = function() {
+            displayCartItems();
+        };
+    
+        function getUserCartKey() {
+            // Retrieve user ID stored in session or local storage
+            var userId = sessionStorage.getItem('userId') || localStorage.getItem('userId');
+            return 'cart-' + userId; // Prefix cart with user ID to create a unique cart key
+        }
+    
+        function displayCartItems() {
+            var cartKey = getUserCartKey(); // Use the unique cart key for the current user
+            let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+            let cartItemsContainer = document.getElementById('cartItems');
+    
+            cartItemsContainer.innerHTML = ''; // Clear previous items
+            if (cart.length > 0) {
+                cart.forEach(item => {
+                    let itemElement = document.createElement('div');
+                    itemElement.textContent = `Item Name: ${item.name}, Quantity: ${item.quantity}, Price: $${item.price}`;
+                    cartItemsContainer.appendChild(itemElement);
+                });
+            } else {
+                cartItemsContainer.textContent = "Your cart is empty.";
+            }
+        }
+    </script>
+    -->
+    
+        
+    
+        
+    </body>
+    
+    </html>
